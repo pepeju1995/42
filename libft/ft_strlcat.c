@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: josperez <josperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/07 11:52:46 by josperez          #+#    #+#             */
-/*   Updated: 2023/03/07 14:19:43 by josperez         ###   ########.fr       */
+/*   Created: 2023/03/07 17:09:50 by josperez          #+#    #+#             */
+/*   Updated: 2023/03/07 17:36:48 by josperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memset(void *b, int c, int len)
+int		ft_strlcat(char *dst, const char *src, int size)
 {
-	int	count;
-	int	*to_modify;
-
-	count = 0;
-	to_modify = (int *) b;
-	while (count < len)
+	int		src_len;
+	int		dst_len;
+	int		cursor;
+	
+	dst_len = ft_strlen(dst);
+	src_len = ft_strlen(src);
+	cursor = 1;
+	while (cursor < size - dst_len - 1 && cursor <= src_len)
 	{
-		to_modify[count] = c;
-		count++;
+		dst[dst_len + cursor] = src[cursor - 1];
+		cursor++;
 	}
-
-	return (b);
+	dst[cursor] = '\0';
+	return (dst_len + src_len);
 }

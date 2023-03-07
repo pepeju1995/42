@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: josperez <josperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/07 11:52:46 by josperez          #+#    #+#             */
-/*   Updated: 2023/03/07 14:19:43 by josperez         ###   ########.fr       */
+/*   Created: 2023/03/07 14:21:28 by josperez          #+#    #+#             */
+/*   Updated: 2023/03/07 14:23:14 by josperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memset(void *b, int c, int len)
+void	ft_bzero(void *s, int n)
 {
-	int	count;
-	int	*to_modify;
+	int		cursor;
+	char	*str;
 
-	count = 0;
-	to_modify = (int *) b;
-	while (count < len)
+	cursor = 0;
+	str = (char *) s;
+	while (cursor < n)
 	{
-		to_modify[count] = c;
-		count++;
+		str[cursor] = '\0';
+		cursor++;
 	}
-
-	return (b);
 }

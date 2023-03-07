@@ -1,27 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: josperez <josperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/07 11:52:46 by josperez          #+#    #+#             */
-/*   Updated: 2023/03/07 14:19:43 by josperez         ###   ########.fr       */
+/*   Created: 2023/03/07 17:33:26 by josperez          #+#    #+#             */
+/*   Updated: 2023/03/07 17:33:54 by josperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memset(void *b, int c, int len)
+
+int		ft_tolower(int c)
 {
-	int	count;
-	int	*to_modify;
-
-	count = 0;
-	to_modify = (int *) b;
-	while (count < len)
-	{
-		to_modify[count] = c;
-		count++;
-	}
-
-	return (b);
+	if (c >= 'A' && c <= 'Z')
+		return (c + 32);
+	return (c);
 }

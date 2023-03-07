@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: josperez <josperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/07 11:52:46 by josperez          #+#    #+#             */
-/*   Updated: 2023/03/07 14:19:43 by josperez         ###   ########.fr       */
+/*   Created: 2023/03/07 14:23:54 by josperez          #+#    #+#             */
+/*   Updated: 2023/03/07 14:27:09 by josperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memset(void *b, int c, int len)
+void	*ft_memcpy(void *dest, const void *src, int n)
 {
-	int	count;
-	int	*to_modify;
+	char	*dst_cpy;
+	char	*src_cpy;
+	int		cursor;
 
-	count = 0;
-	to_modify = (int *) b;
-	while (count < len)
+	cursor = 0;
+	src_cpy = (char *) src;
+	dst_cpy = (char *) dest;
+	while (cursor < n)
 	{
-		to_modify[count] = c;
-		count++;
+		dst_cpy[cursor] = src_cpy[cursor];
+		cursor++;
 	}
-
-	return (b);
+	return (dest);
 }
