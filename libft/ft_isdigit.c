@@ -6,11 +6,11 @@
 /*   By: josperez <josperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 11:53:29 by josperez          #+#    #+#             */
-/*   Updated: 2023/03/07 11:53:30 by josperez         ###   ########.fr       */
+/*   Updated: 2023/03/07 13:50:33 by josperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(unsigned char digit)
+int	ft_isdigit(int digit)
 {
 	if (digit < 48 || digit > 57)
 		return (0);

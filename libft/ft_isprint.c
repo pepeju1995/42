@@ -6,11 +6,11 @@
 /*   By: josperez <josperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 11:53:37 by josperez          #+#    #+#             */
-/*   Updated: 2023/03/07 11:53:38 by josperez         ###   ########.fr       */
+/*   Updated: 2023/03/07 13:50:37 by josperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(char letter)
+int	ft_isprint(int letter)
 {
 	if (letter < 32 || letter > 126)
 		return (0);

@@ -6,11 +6,11 @@
 /*   By: josperez <josperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 11:53:00 by josperez          #+#    #+#             */
-/*   Updated: 2023/03/07 11:53:07 by josperez         ###   ########.fr       */
+/*   Updated: 2023/03/07 13:50:19 by josperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalnum(char letter)
+int	ft_isalnum(int letter)
 {
 	if (letter < 48 || letter > 57)
 	{

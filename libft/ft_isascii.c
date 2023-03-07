@@ -6,11 +6,11 @@
 /*   By: josperez <josperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 11:53:21 by josperez          #+#    #+#             */
-/*   Updated: 2023/03/07 11:53:22 by josperez         ###   ########.fr       */
+/*   Updated: 2023/03/07 13:50:28 by josperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(char letter)
+int	ft_isascii(int letter)
 {
 	if (letter < 0 || letter > 127)
 		return (0);
