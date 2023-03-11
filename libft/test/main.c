@@ -1,5 +1,6 @@
 #include "../libft.h";
 #include "testing.h";
+#include <setjmp.h>
 #include <stdlib.h>;
 
 int	main()
@@ -68,6 +69,5 @@ int	main()
 	test_calloc();
 	
 	printf("ft_strdup tests:\n\t");
-	test_strdup();	
-	
+	test_strdup();
 }

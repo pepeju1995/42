@@ -1,3 +1,5 @@
+#include "../libft.h";
+
 int test_ft_isalpha();
 int test_ft_isdigit();
 int test_ft_isalnum();
