@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: josperez <josperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/07 17:38:49 by josperez          #+#    #+#             */
-/*   Updated: 2023/03/11 10:03:16 by josperez         ###   ########.fr       */
+/*   Created: 2023/03/11 10:54:34 by josperez          #+#    #+#             */
+/*   Updated: 2023/03/11 11:01:24 by josperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strnstr(const char *big, const char *little, int len)
 {
-	char	*s_cpy;
+	int	i;
+	int	j;
 
-	s_cpy = s;
-	if (c == '\0')
+	if (*little == '\0')
+		return ((char *) big);
+	i = 0;
+	while (i < len && big[i])
 	{
-		while (*s_cpy)
+		j = 0;
+		while (little[j] && big[i] && little[j] == big[i])
 		{
-			s_cpy++;
+			i++;
+			j++;
 		}
-		return (s_cpy);
+		if (little[j] == '\0')
+			return((char *)&big[i - j]);
+		j -= i + 1;
 	}
-
-	while (*s_cpy)
-	{
-		if (*s_cpy == c)
-			return (s_cpy);
-		s_cpy++;
-	}
-	return (s_cpy++);
+	return (0);
 }

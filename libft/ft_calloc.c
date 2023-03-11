@@ -1,34 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: josperez <josperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/07 17:38:49 by josperez          #+#    #+#             */
-/*   Updated: 2023/03/11 10:03:16 by josperez         ###   ########.fr       */
+/*   Created: 2023/03/11 11:27:33 by josperez          #+#    #+#             */
+/*   Updated: 2023/03/11 11:42:10 by josperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(const char *s, int c)
+void	*ft_calloc(int nmemb, int size)
 {
-	char	*s_cpy;
+	void	*result;
+	int		cursor;
 
-	s_cpy = s;
-	if (c == '\0')
+	result = malloc(nmemb * size);
+	cursor = 0;
+	while (cursor < nmemb)
 	{
-		while (*s_cpy)
-		{
-			s_cpy++;
-		}
-		return (s_cpy);
+		((unsigned char *)result)[cursor] = 0;
+		cursor++;
 	}
-
-	while (*s_cpy)
-	{
-		if (*s_cpy == c)
-			return (s_cpy);
-		s_cpy++;
-	}
-	return (s_cpy++);
+	return (result);
 }

@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: josperez <josperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/07 17:38:49 by josperez          #+#    #+#             */
-/*   Updated: 2023/03/11 10:03:16 by josperez         ###   ########.fr       */
+/*   Created: 2023/03/11 11:35:44 by josperez          #+#    #+#             */
+/*   Updated: 2023/03/11 11:42:18 by josperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(const char *s, int c)
+#include "libft.h"
+
+char	*ft_strdup(const char *s)
 {
-	char	*s_cpy;
+	int		len;
+	char	*s_dup;
+	int		cursor;
 
-	s_cpy = s;
-	if (c == '\0')
+	len = ft_strlen((char *)s) + 1;
+	s_dup = malloc(len * sizeof(char));
+	while (cursor < len)
 	{
-		while (*s_cpy)
-		{
-			s_cpy++;
-		}
-		return (s_cpy);
+		s_dup[cursor] = s[cursor];
+		cursor++;
 	}
-
-	while (*s_cpy)
-	{
-		if (*s_cpy == c)
-			return (s_cpy);
-		s_cpy++;
-	}
-	return (s_cpy++);
+	s_dup[cursor] = '\0';
+	return (s_dup);
 }

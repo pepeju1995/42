@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: josperez <josperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/07 17:38:49 by josperez          #+#    #+#             */
-/*   Updated: 2023/03/11 10:03:16 by josperez         ###   ########.fr       */
+/*   Created: 2023/03/11 09:49:06 by josperez          #+#    #+#             */
+/*   Updated: 2023/03/11 10:34:09 by josperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(const char *s, int c)
-{
-	char	*s_cpy;
+#include "libft.h"
 
-	s_cpy = s;
-	if (c == '\0')
+char	*ft_strrchr(const char *s, int c)
+{
+	char	*s_last;
+	char	*s_cpy;
+	
+	s_cpy = (char *)s;
+	if (*s_cpy)
 	{
 		while (*s_cpy)
 		{
+			s_cpy = ft_strchr(s_cpy, c);
+			if (*s_cpy)
+				s_last = s_cpy;
 			s_cpy++;
 		}
-		return (s_cpy);
+		return (s_last);
 	}
-
-	while (*s_cpy)
-	{
-		if (*s_cpy == c)
-			return (s_cpy);
-		s_cpy++;
-	}
-	return (s_cpy++);
+	
+	return (s_cpy);
 }

@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: josperez <josperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/07 17:38:49 by josperez          #+#    #+#             */
-/*   Updated: 2023/03/11 10:03:16 by josperez         ###   ########.fr       */
+/*   Created: 2023/03/11 10:33:50 by josperez          #+#    #+#             */
+/*   Updated: 2023/03/11 10:40:04 by josperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(const char *s, int c)
+int		ft_strncmp(const char *s1, const char *s2, int n)
+
 {
-	char	*s_cpy;
+	int	cursor;
 
-	s_cpy = s;
-	if (c == '\0')
+	cursor = 0;
+	if (*s1 || *s2)
 	{
-		while (*s_cpy)
+		while (s1[cursor] || s2[cursor])
 		{
-			s_cpy++;
+			if (s1[cursor] < s2[cursor])
+				return (-1);
+			else if (s2[cursor] < s1[cursor])
+				return (1);
+			cursor++;				
 		}
-		return (s_cpy);
 	}
-
-	while (*s_cpy)
-	{
-		if (*s_cpy == c)
-			return (s_cpy);
-		s_cpy++;
-	}
-	return (s_cpy++);
+	return (0);
 }

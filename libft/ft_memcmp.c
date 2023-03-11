@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: josperez <josperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/07 17:38:49 by josperez          #+#    #+#             */
-/*   Updated: 2023/03/11 10:03:16 by josperez         ###   ########.fr       */
+/*   Created: 2023/03/11 10:46:32 by josperez          #+#    #+#             */
+/*   Updated: 2023/03/11 10:54:10 by josperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(const char *s, int c)
+int		ft_memcmp(const void *s1, const void *s2, int n)
 {
-	char	*s_cpy;
-
-	s_cpy = s;
-	if (c == '\0')
+	unsigned char	*tmp_s1;
+	unsigned char	*tmp_s2;
+	
+	tmp_s1 = (unsigned char *)s1;
+	tmp_s2 = (unsigned char *)s2;
+	if (*tmp_s1 || *tmp_s2)
 	{
-		while (*s_cpy)
+		while (*tmp_s1 || *tmp_s2)
 		{
-			s_cpy++;
+			if (*tmp_s1 < *tmp_s2)
+				return (-1);
+			else if (*tmp_s2 < *tmp_s1)
+				return (1);
+			tmp_s2++;
+			tmp_s1++;
 		}
-		return (s_cpy);
 	}
-
-	while (*s_cpy)
-	{
-		if (*s_cpy == c)
-			return (s_cpy);
-		s_cpy++;
-	}
-	return (s_cpy++);
+	return (0);
 }
+ 

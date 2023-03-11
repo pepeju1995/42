@@ -6,20 +6,20 @@
 /*   By: josperez <josperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 11:52:46 by josperez          #+#    #+#             */
-/*   Updated: 2023/03/07 14:19:43 by josperez         ###   ########.fr       */
+/*   Updated: 2023/03/11 09:13:50 by josperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	*ft_memset(void *b, int c, int len)
 {
-	int	count;
-	int	*to_modify;
+	int				count;
+	unsigned char	*to_modify;
 
 	count = 0;
-	to_modify = (int *) b;
+	to_modify = b;
 	while (count < len)
 	{
-		to_modify[count] = c;
+		to_modify[count] = (unsigned char)c;
 		count++;
 	}
 

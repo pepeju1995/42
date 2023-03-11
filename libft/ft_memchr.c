@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: josperez <josperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/07 17:38:49 by josperez          #+#    #+#             */
-/*   Updated: 2023/03/11 10:03:16 by josperez         ###   ########.fr       */
+/*   Created: 2023/03/11 10:40:52 by josperez          #+#    #+#             */
+/*   Updated: 2023/03/11 10:46:06 by josperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(const char *s, int c)
+void	*ft_memchr(const void *s, int c, int n)
 {
-	char	*s_cpy;
+	void	*s_cpy;
 
 	s_cpy = s;
 	if (c == '\0')
 	{
-		while (*s_cpy)
+		while (*(unsigned char *)s_cpy)
 		{
 			s_cpy++;
 		}
 		return (s_cpy);
 	}
 
-	while (*s_cpy)
+	while (*(unsigned char *)s_cpy)
 	{
-		if (*s_cpy == c)
+		if (*(unsigned char *)s_cpy == (unsigned char)c)
 			return (s_cpy);
 		s_cpy++;
 	}
