@@ -6,9 +6,11 @@
 /*   By: josperez <josperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 17:09:50 by josperez          #+#    #+#             */
-/*   Updated: 2023/03/07 17:36:48 by josperez         ###   ########.fr       */
+/*   Updated: 2023/03/14 21:13:20 by josperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int		ft_strlcat(char *dst, const char *src, int size)
 {

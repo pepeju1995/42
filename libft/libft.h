@@ -6,10 +6,11 @@
 /*   By: josperez <josperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 14:06:15 by josperez          #+#    #+#             */
-/*   Updated: 2023/03/11 11:41:46 by josperez         ###   ########.fr       */
+/*   Updated: 2023/03/14 21:49:36 by josperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+char	*ft_strdup(const char *s);
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
@@ -20,6 +21,7 @@ void	ft_bzero(void *s, int n);
 void	*ft_memcpy(void *dest, const void *src, int n);
 void	*ft_memmove(void *dest, const void *src, int n);
 int		ft_strlcpy(char *dst, const char *src, int size);
+int		ft_strlen(const char *str);
 int		ft_strlcat(char *dst, const char *src, int size);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
@@ -31,4 +33,3 @@ int		ft_memcmp(const void *s1, const void *s2, int n);
 char	*ft_strnstr(const char *big, const char *little, int len);
 int		ft_atoi(const char *nptr);
 void	*ft_calloc(int nmemb, int size);
-char	*ft_strdup(const char *s);

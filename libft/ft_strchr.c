@@ -6,7 +6,7 @@
 /*   By: josperez <josperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 17:38:49 by josperez          #+#    #+#             */
-/*   Updated: 2023/03/11 10:03:16 by josperez         ###   ########.fr       */
+/*   Updated: 2023/03/14 21:54:52 by josperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@ char	*ft_strchr(const char *s, int c)
 {
 	char	*s_cpy;
 
-	s_cpy = s;
+	s_cpy = ft_strdup(s);
 	if (c == '\0')
 	{
 		while (*s_cpy)
