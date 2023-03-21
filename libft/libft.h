@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: josperez <josperez@student.42.fr>          +#+  +:+       +#+        */
+/*   By: josperez <josperez@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 14:06:15 by josperez          #+#    #+#             */
-/*   Updated: 2023/03/14 21:49:36 by josperez         ###   ########.fr       */
+/*   Updated: 2023/03/21 19:09:20 by josperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,3 +33,12 @@ int		ft_memcmp(const void *s1, const void *s2, int n);
 char	*ft_strnstr(const char *big, const char *little, int len);
 int		ft_atoi(const char *nptr);
 void	*ft_calloc(int nmemb, int size);
+char	*ft_strtrim(char const *s1, char const *set);
+char	**ft_split(char const *s, char c);
+char	*ft_itoa(int n);
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void 	ft_striteri(char *s, void (*f)(unsigned int, char*));
+void	ft_putchar_fd(char c, int fd);
+void 	ft_putstr_fd(char *s, int fd);
+void	ft_putendl_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
