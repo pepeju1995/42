@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
+#include "libft.h"
+
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	int					str_len;
@@ -17,12 +20,13 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char				*result;
 
 	str_len = ft_strlen(s);
-	result = malloc(str_len * sizeof(char));
+	result = malloc((str_len + 1) * sizeof(char));
 	cursor = 0;
 	while (s[cursor])
 	{
 		result[cursor] = f(cursor, s[cursor]);
 		cursor++;
 	}
+	result[cursor] = '\0';
 	return (result);
 }

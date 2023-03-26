@@ -10,12 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
+#include "libft.h"
+
 static int	in_set(char c, char const *set)
 {
 	while (*set)
 	{
 		if (c == *set)
 			return (1);
+		set++;
 	}
 	return (0);
 }
@@ -27,12 +31,11 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*result;
 
 	init = 0;
-	while (s1[init] && in_set(s1[init], set) == 1)
-		init++;
 	end = ft_strlen(s1);
-	while (end > init && in_set(s1[end], set) == 1)
+	while (in_set(s1[init], set) == 1)
+		init++;
+	while (in_set(s1[end - 1], set) == 1)
 		end--;
-	result = malloc((end - init) * sizeof(char));
-	result = s1 + init;
+	result = ft_substr(s1, init, end - init);
 	return (result);
 }
