@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: josperez <josperez@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: josperez <josperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 14:06:15 by josperez          #+#    #+#             */
-/*   Updated: 2023/03/21 19:09:20 by josperez         ###   ########.fr       */
+/*   Updated: 2023/03/26 08:04:44 by josperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 char	*ft_strdup(const char *s);
 int		ft_isalpha(int c);
@@ -42,3 +43,5 @@ void	ft_putchar_fd(char c, int fd);
 void 	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+char	*ft_substr(char const *s, unsigned int start, int len);
+char	*ft_strjoin(char const *s1, char const *s2);
