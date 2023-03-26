@@ -6,7 +6,7 @@
 /*   By: josperez <josperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 17:09:50 by josperez          #+#    #+#             */
-/*   Updated: 2023/03/14 21:13:20 by josperez         ###   ########.fr       */
+/*   Updated: 2023/03/26 13:22:46 by josperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,17 @@ int		ft_strlcat(char *dst, const char *src, int size)
 {
 	int		src_len;
 	int		dst_len;
-	int		cursor;
 	
 	dst_len = ft_strlen(dst);
 	src_len = ft_strlen(src);
-	cursor = 1;
-	while (cursor < size - dst_len - 1 && cursor <= src_len)
+	if (size <= dst_len)
+		return (size + src_len);
+	if (src_len < (size - dst_len))
+		ft_memcpy(dst + dst_len, src, src_len + 1);
+	else
 	{
-		dst[dst_len + cursor] = src[cursor - 1];
-		cursor++;
+		ft_memcpy(dst + dst_len, src, (size - dst_len - 1));
+		dst[size - 1] = '\0';
 	}
-	dst[cursor] = '\0';
 	return (dst_len + src_len);
 }

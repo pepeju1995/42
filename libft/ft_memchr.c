@@ -6,9 +6,12 @@
 /*   By: josperez <josperez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 10:40:52 by josperez          #+#    #+#             */
-/*   Updated: 2023/03/14 21:54:55 by josperez         ###   ########.fr       */
+/*   Updated: 2023/03/26 11:37:32 by josperez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stddef.h>
+#include "libft.h"
 
 void	*ft_memchr(const void *s, int c, int n)
 {
@@ -28,9 +31,9 @@ void	*ft_memchr(const void *s, int c, int n)
 
 	while (((unsigned char *)s_cpy)[cursor] && cursor < n)
 	{
-		if (*(unsigned char *)s_cpy == (unsigned char)c)
-			return (s_cpy);
+		if (((unsigned char *)s_cpy)[cursor] == (unsigned char)c)
+			return (s_cpy + cursor);
 		cursor++;
 	}
-	return (s_cpy++);
+	return (NULL);
 }
