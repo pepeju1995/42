@@ -60,7 +60,8 @@ char	*ft_itoa(int n)
 		n *= -1;
 	}
 	int_len += integer_len(n);
-	result = malloc((int_len + 1) * sizeof(char));
+	if ((result = malloc((int_len + 1) * sizeof(char))) == NULL)
+		return (result);
 	while (n / 10 > 0)
 	{
 		result[pos++] = (n % 10) + '0';
